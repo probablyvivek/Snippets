@@ -10,10 +10,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v3 # Ensure this is the latest version or the one you intend to use
+        uses: actions/checkout@v3
 
       - name: Set up Python
-        uses: actions/setup-python@v4 # Ensure this is the latest version or the one you intend to use
+        uses: actions/setup-python@v4
         with:
           python-version: '3.9'
 
@@ -22,23 +22,20 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y libxml2-dev libxslt-dev
 
-      - name: Install Dependencies
+      - name: Install Python Dependencies
         run: |
-          python -m pip install --upgrade pip
-          pip install pandas openpyxl requests lxml
-
-      - name: Create Directory
-        run: mkdir -p Football Team Data
+          pip install pandas lxml openpyxl requests
 
       - name: Run Script
-        run: python FootballData.py
+        run: python ./Programming/Snippets/Football Team Data/FootballData.py
+        working-directory: .
 
       - name: Commit and Push Changes
         run: |
           git config --global user.name 'probablyvivek'
           git config --global user.email 'viv.tiwari13@gmail.com'
           git add Programming/Snippets/Football Team Data/*
-          git commit -m "Updated stats" -a || echo "No changes to commit"
-          git push --set-upstream origin HEAD:main
+          git commit -m "Updated football stats" -a || echo "No changes to commit"
+          git push
         env:
-          GITHUB_TOKEN: ${{ secrets.SNIPPETS_AUTOMATE }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
