@@ -25,7 +25,7 @@ jobs:
       - name: Run Script
         run: |
           python FootballData.py
-        working-directory: ./Snippets/Football_Data  # Adjusted to correct path
+        working-directory: Football_Data  # Corrected to the relative path from the repository root
 
       - name: Commit and Push Changes
         run: |
