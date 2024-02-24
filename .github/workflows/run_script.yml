@@ -28,15 +28,14 @@ jobs:
 
       - name: Run Script
         run: python Programming/Snippets/Football\ Team\ Data/FootballData.py
-        working-directory: .
+        working-directory: ${{ github.workspace }}
 
       - name: Commit and Push Changes
         run: |
           git config --global user.name 'probablyvivek'
           git config --global user.email 'viv.tiwari13@gmail.com'
-          git add Programming/Snippets/Football\ Team\ Data/*
+          git add .
           git commit -m "Updated football stats" -a || echo "No changes to commit"
           git push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
