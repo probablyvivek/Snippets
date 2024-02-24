@@ -27,7 +27,7 @@ jobs:
 
     - name: Commit and Push if there are Changes
       run: |
-        git config --global user.name 'probablyvivek'
+        git config --global user.name 'probablyvivek' 
         git config --global user.email 'viv.tiwari13@gmail.com'
         git add -A
         git commit -m "Updated stats" -a || echo "No changes to commit"
