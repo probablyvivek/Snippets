@@ -1,4 +1,5 @@
 import pandas as pd
+import os
 import ssl
 import lxml
 ssl._create_default_https_context = ssl._create_unverified_context # Ignore SSL certificate errors
@@ -18,9 +19,14 @@ urls = [
     'https://fbref.com/en/squads/19538871/Manchester-United-Stats'
 ]
 
+directory = "./Programming/Snippets/Football_Data"
+if not os.path.exists(directory):
+    os.makedirs(directory)
+
 # Fetch data for each URL
 for url in urls:
     data, team_name = get_data(url) 
     # Save each team's data to a separate CSV file
-    data.to_excel(f"./Programming/Snippets/Football_Data/{team_name}.xlsx", index=False)  
+    file_path = os.path.join(directory, f"{team_name}.xlsx")
+    data.to_excel(file_path, index=False)
 
