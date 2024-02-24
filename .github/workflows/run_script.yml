@@ -22,10 +22,14 @@ jobs:
         run: |
           pip install pandas lxml openpyxl requests
 
+      - name: Create Data Directory
+        run: |
+          mkdir -p Football_Data
+
       - name: Run Script
         run: |
           python FootballData.py
-        working-directory: Football_Data  # Corrected to the relative path from the repository root
+        working-directory: Football_Data
 
       - name: Commit and Push Changes
         run: |
