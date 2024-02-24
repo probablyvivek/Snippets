@@ -27,7 +27,7 @@ jobs:
           pip install pandas lxml openpyxl requests
 
       - name: Run Script
-        run: python ./Programming/Snippets/Football Team Data/FootballData.py
+        run: python Programming/Snippets/Football\ Team\ Data/FootballData.py
         working-directory: .
 
       - name: Commit and Push Changes
@@ -39,3 +39,4 @@ jobs:
           git push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
