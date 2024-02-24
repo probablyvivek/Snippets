@@ -1,9 +1,10 @@
 name: Fetch and Save Football Stats
 
 on:
-  push: # Triggers the workflow on push events for any branch. Remove or comment out after testing.
+  push:
+    branches: [main]
   schedule:
-    - cron: '0 0 * * *' # Runs at 00:00 UTC daily.
+    - cron: '0 0 * * *'
 
 jobs:
   fetch_and_save_stats:
@@ -17,18 +18,14 @@ jobs:
         with:
           python-version: '3.9'
 
-      - name: Install System Dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y libxml2-dev libxslt-dev
-
-      - name: Install Python Dependencies
+      - name: Install Dependencies
         run: |
           pip install pandas lxml openpyxl requests
 
       - name: Run Script
-        run: python Programming/Snippets/Football\ Team\ Data/FootballData.py
-        working-directory: ${{ github.workspace }}
+        run: |
+          python FootballData.py
+        working-directory: Programming/Snippets/Football\ Team\ Data
 
       - name: Commit and Push Changes
         run: |
