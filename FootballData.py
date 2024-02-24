@@ -1,5 +1,6 @@
 import pandas as pd
 import ssl
+import lxml
 ssl._create_default_https_context = ssl._create_unverified_context # Ignore SSL certificate errors
 
 
