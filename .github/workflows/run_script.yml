@@ -24,7 +24,7 @@ jobs:
 
       - name: Create Data Directory
         run: |
-          mkdir -p Football_Data
+          mkdir -p Programming/Snippets/Football_Data
 
       - name: Run Script
         run: |
