@@ -22,4 +22,5 @@ urls = [
 for url in urls:
     data, team_name = get_data(url) 
     # Save each team's data to a separate CSV file
-    data.to_excel(f"./Football Team Data/{team_name}.xlsx", index=False)
+    data.to_excel(f"./Programming/Snippets/Football Team Data/{team_name}.xlsx", index=False)  
+
