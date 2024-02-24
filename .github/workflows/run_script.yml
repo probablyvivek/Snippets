@@ -37,7 +37,7 @@ jobs:
         run: |
           git config --global user.name 'probablyvivek'
           git config --global user.email 'viv.tiwari13@gmail.com'
-          git add Programming/Snippets/*
+          git add Programming/Snippets/Football Team Data/*
           git commit -m "Updated stats" -a || echo "No changes to commit"
           git push --set-upstream origin HEAD:main
         env:
