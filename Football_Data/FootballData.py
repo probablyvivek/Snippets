@@ -4,8 +4,6 @@ import ssl
 import lxml
 ssl._create_default_https_context = ssl._create_unverified_context # Ignore SSL certificate errors
 
-
-# https://fbref.com/en/squads/cff3d9bb/Chelsea-Stats
 def get_data(url):
     team_name = url.split('/')[-1].replace('-Stats', '')
     df = pd.read_html(url, match="Round")[0]  # Automatically selects the first table that contains 'Round'
