@@ -34,7 +34,7 @@ jobs:
         run: |
           git config --global user.name 'probablyvivek'
           git config --global user.email 'viv.tiwari13@gmail.com'
-          git add Programming/Snippets/Football Team Data/*
+          git add Programming/Snippets/Football\ Team\ Data/*
           git commit -m "Updated football stats" -a || echo "No changes to commit"
           git push
         env:
