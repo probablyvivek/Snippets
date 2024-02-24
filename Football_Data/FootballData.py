@@ -15,8 +15,7 @@ def get_data(url):
     return df, team_name  # Return both the DataFrame and the team name
 
 urls = [
-    'https://fbref.com/en/squads/cff3d9bb/Chelsea-Stats',
-    'https://fbref.com/en/squads/19538871/Manchester-United-Stats'
+    'https://fbref.com/en/squads/cff3d9bb/Chelsea-Stats'
 ]
 
 directory = "./Programming/Snippets/Football_Data"
