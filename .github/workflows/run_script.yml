@@ -28,7 +28,7 @@ jobs:
           pip install pandas openpyxl requests lxml
 
       - name: Create Directory
-        run: mkdir -p Programming/Snippets
+        run: mkdir -p Football Team Data
 
       - name: Run Script
         run: python FootballData.py
