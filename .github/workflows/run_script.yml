@@ -33,10 +33,12 @@ jobs:
     - name: Run Script
       run: python FootballData.py
 
-    - name: Commit and Push if there are Changes
+	  - name: Commit and Push if there are Changes
       run: |
         git config --global user.name 'probablyvivek'
         git config --global user.email 'viv.tiwari13@gmail.com'
         git add -A
         git commit -m "Updated stats" -a || echo "No changes to commit"
+        git remote set-url origin https://probablyvivek:${{ secrets.SNIPPETS_AUTOMATE }}@github.com/probablyvivek/Snippets.git
         git push
+
